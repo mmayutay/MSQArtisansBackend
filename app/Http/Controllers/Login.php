@@ -25,6 +25,8 @@ class Login extends Controller
         return $request;
     }
 
+
+
     public function signup(Request $request)
     {
         $createNewAccount = new ArtisanUsers();
