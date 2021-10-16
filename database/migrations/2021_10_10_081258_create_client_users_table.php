@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtisanUsersTable extends Migration
+class CreateClientUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateArtisanUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('artisan-users', function (Blueprint $table) {
-            $table->id();
+        Schema::create('client_users', function (Blueprint $table) {
+            $table->id()->autoIncrement();
             $table->string('firstname');
             $table->string('middlename');
             $table->string('lastname');
@@ -35,6 +35,6 @@ class CreateArtisanUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artisan-users');
+        Schema::dropIfExists('client_users');
     }
 }
