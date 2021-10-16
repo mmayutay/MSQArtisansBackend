@@ -24,4 +24,14 @@ class JobOrderForTracking extends Controller
             ->where('jo_type', $type)
             ->get();
     }
+
+    public function SelectedJobFinish(Request $request)
+    {
+        $selectedJob = JobOrderTracker::where('id', $request->id)->get()[0];
+        $selectedJob->artisan_id = $request->artisan_id;
+        $selectedJob->job_orders_id = $request->job_order;
+        $selectedJob->jo_type = $request->type;
+        $selectedJob->save();
+        return $selectedJob;
+    }
 }

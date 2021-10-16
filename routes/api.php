@@ -34,4 +34,6 @@ Route::get('client/get-user-data/{id}', 'App\Http\Controllers\ClientsController@
 
 Route::post('job-order-tracker/add', 'App\Http\Controllers\JobOrderForTracking@AddJobOrderToTracker');
 
+Route::post('job-order-tracker/update', 'App\Http\Controllers\JobOrderForTracking@SelectedJobFinish');
+
 Route::get('job-order-tracker/get-orders-on-track/{artisan_id}/{type}', 'App\Http\Controllers\JobOrderForTracking@getJobOrdersOnTrack');
